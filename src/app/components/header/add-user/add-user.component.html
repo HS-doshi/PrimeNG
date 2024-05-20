@@ -3,11 +3,16 @@
     <tr>
       <td>
         <p-dropdown
+          [(ngModel)]="selectCity"
           [options]="cities"
-          [showClear]="true"
+          [filter]="true"
           optionLabel="name"
+           optionValue="code"
           placeholder="Select a City"
         />
+      </td>
+      <td>
+        {{selectCity}}
       </td>
     </tr>
   </tbody>

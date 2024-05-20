@@ -7,11 +7,12 @@ import { DropdownModule } from 'primeng/dropdown';
 @Component({
   selector: 'app-add-user',
   standalone: true,
-  imports: [DropdownModule],
+  imports: [DropdownModule, FormsModule],
   templateUrl: './add-user.component.html',
   styleUrl: './add-user.component.css'
 })
 export class AddUserComponent {
+  selectCity:string =''
   cities: City[]=[
         {name:'United States', code:'usa'},
         {name:'London', code:'ldn'},
