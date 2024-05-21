@@ -6,12 +6,13 @@ import { InputTextModule } from 'primeng/inputtext';
 import { AddUserComponent } from './components/header/add-user/add-user.component';
 import { MenubarModule } from 'primeng/menubar';
 import { MenuItem } from 'primeng/api';
+import {StyleClassModule} from 'primeng/styleclass';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, CommonModule,HeaderComponent,
-    InputTextModule,AddUserComponent,MenubarModule],
+    InputTextModule,AddUserComponent,MenubarModule, StyleClassModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
