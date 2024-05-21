@@ -15,18 +15,6 @@ import { ThemeService } from '../../services/theme.service';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent  implements OnInit{
-  checked:boolean = true;
-  selectedTheme :string = 'dark'
+export class HeaderComponent{
 
-  // use of ngModel i need to import formsModule!
-  themenService : ThemeService = inject(ThemeService)
-
-  ngOnInit(): void {
-      this.themenService.setTheme(this.selectedTheme);
-  }
-  onThemeChange(theme:string):void{
-    this.selectedTheme = theme;
-    this.themenService.setTheme(theme)
-  }
 }
