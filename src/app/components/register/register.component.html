@@ -1,5 +1,20 @@
-<form [formGroup]="registerForm">
+<form [formGroup]="registerForm" (ngSubmit)="submitDetails()">
   <p-card header="REGISTER" [style]="{ width: '360px' }">
+    <div class="field">
+      <label for="text">Full Name</label>
+      <input
+        type="text"
+        pInputText
+        formControlName="fullName"
+        class="w-full"
+        name="text"
+        placeholder="Enter your FullName!"
+      />
+      <small *ngIf="(fullName.dirty|| fullName.touched)" class="block p-error">
+       <div *ngIf="fullName.errors?.['required']">Name is required!</div>
+       <div *ngIf="fullName.errors?.['pattern']">Enter a Valid Name!</div>
+      </small>
+    </div>
     <div class="field">
       <label for="email">Email</label>
       <input
@@ -29,8 +44,26 @@
         <div *ngIf="password.errors?.['required']">Password is required!</div>
       </small>
     </div>
-    <p-button label="REGISTER" styleClass="w-full" [disabled]="registerForm.invalid"/>
-    <div class="mt-2">Go to Login. <a routerLink="/login">Login</a></div>
+    <div class="field">
+      <label for="password">Confirm Password</label>
+      <input
+        type="password"
+        pInputText
+        formControlName="confirmPassword"
+        class="w-full"
+        name="confirmPassword"
+        placeholder="Confirm Password!"
+      />
+      <small *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)" class="block p-error">
+        <div *ngIf="confirmPassword.errors?.['password']">Confirm password is required!</div>
+      </small>
+      <small class="block p-error" *ngIf="registerForm.errors?.['passwordMisMatch'] && confirmPassword.valid && password.valid">
+        Password should be Match!
+      </small>
+    </div>
+    <p-button label="REGISTER" type="submit" styleClass="w-full" [disabled]="registerForm.invalid"/>
+
+    <div class="mt-2">Already sign up? <a routerLink="/login">Login</a></div>
     <!-- Must have to add / slash for routerLink in primeNG -->
   </p-card>
 </form>
