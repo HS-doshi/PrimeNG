@@ -61,7 +61,10 @@
         Password should be Match!
       </small>
     </div>
-    <p-button label="REGISTER" type="submit" styleClass="w-full" [disabled]="registerForm.invalid"/>
+    <p-button label="REGISTER"
+    styleClass="w-full"
+    [disabled]="registerForm.invalid"
+    type="submit"/>
 
     <div class="mt-2">Already sign up? <a routerLink="/login">Login</a></div>
     <!-- Must have to add / slash for routerLink in primeNG -->

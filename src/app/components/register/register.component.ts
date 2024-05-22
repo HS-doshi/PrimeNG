@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
@@ -11,14 +11,16 @@ import { User } from '../../interface/auth';
 import { ToastModule } from 'primeng/toast';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
+import { RippleModule } from 'primeng/ripple';
+
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule,CommonModule, CardModule,
-    ButtonModule,InputTextModule,MenuModule,ToastModule],
+  imports: [ReactiveFormsModule,CommonModule, CardModule,RippleModule,
+    ButtonModule,InputTextModule,MenuModule,ToastModule,FormsModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
-  providers:[AuthService]
+
 })
 export class RegisterComponent {
 
@@ -53,13 +55,14 @@ export class RegisterComponent {
   submitDetails(){
     const postdata = {...this.registerForm.value};
     delete postdata.confirmPassword;
+    console.log(postdata)
 
     this.authService.registerUser(postdata as User).subscribe(res=>{
       console.log(res)
       this.msgService.add({ severity: 'success', summary: 'Success', detail: 'Successfully Registered!' });
       this.router.navigate(['login'])
     },(error)=>{
-      this.msgService.add({ severity: 'error', summary: 'Success', detail: 'Successfully Registered!' });
+      this.msgService.add({ severity: 'error', summary: 'Error', detail: 'Something is Wrong!' });
     })
   }
 }
