@@ -1,0 +1,18 @@
+<form [formGroup]="loginForm">
+  <p-card header="Login"  [style]="{width:'360px'}">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed
+      consequuntur error repudiandae numquam deserunt quisquam repellat libero
+      asperiores earum nam nobis, culpa ratione quam perferendis esse,
+      cupiditate neque quas!
+      <div class="field">
+        <label for="email">Email</label>
+    <input type="email" pInputText formControlName="email" class="w-full"
+    name="email" placeholder="Enter your Email!"/>
+  </div>
+  <div class="field">
+    <label for="password">Password</label>
+    <input type="password" pInputText formControlName="password" class="w-full"
+    name="password" placeholder="Enter your Password!"/>
+  </div>
+</p-card>
+</form>
