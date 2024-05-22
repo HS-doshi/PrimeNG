@@ -3,7 +3,11 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+<<<<<<< HEAD
     "angu17-theme": {
+=======
+    "prime-ng": {
+>>>>>>> e14c78f (initial commit)
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +17,11 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+<<<<<<< HEAD
             "outputPath": "dist/angu17-theme",
+=======
+            "outputPath": "dist/prime-ng",
+>>>>>>> e14c78f (initial commit)
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -25,9 +33,13 @@
               "src/assets"
             ],
             "styles": [
+<<<<<<< HEAD
               "src/styles.css",
               "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
               "node_modules/primeng/resources/primeng.min.css"
+=======
+              "src/styles.css"
+>>>>>>> e14c78f (initial commit)
             ],
             "scripts": [],
             "server": "src/main.server.ts",
@@ -64,10 +76,17 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
+<<<<<<< HEAD
               "buildTarget": "angu17-theme:build:production"
             },
             "development": {
               "buildTarget": "angu17-theme:build:development"
+=======
+              "buildTarget": "prime-ng:build:production"
+            },
+            "development": {
+              "buildTarget": "prime-ng:build:development"
+>>>>>>> e14c78f (initial commit)
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +94,11 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
+<<<<<<< HEAD
             "buildTarget": "angu17-theme:build"
+=======
+            "buildTarget": "prime-ng:build"
+>>>>>>> e14c78f (initial commit)
           }
         },
         "test": {
@@ -91,9 +114,13 @@
               "src/assets"
             ],
             "styles": [
+<<<<<<< HEAD
               "src/styles.css",
               "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
               "node_modules/primeng/resources/primeng.min.css"
+=======
+              "src/styles.css"
+>>>>>>> e14c78f (initial commit)
             ],
             "scripts": []
           }
